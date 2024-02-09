@@ -10,3 +10,14 @@ for i in range(start, end+1):
 print(k)
 
 
+n=int(input())
+sum=0
+while n>0:
+    k=n%10
+    print(k)
+    if k%3 ==0:
+        sum+=k
+    n=n//10
+print(sum)
+
+
