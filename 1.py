@@ -1,22 +1,21 @@
 #1 задача
 import math
-w = int(input())
-k=0
-for i in range(1, w+1):
-    if math.gcd(w, i) == 1:
+def fun1(n):
+   k=0
+   for i in range(1, n+1):
+      if math.gcd(n, i) == 1:
        k+=1
-print(k)
+   return k
 
 #2 задача
-n=int(input())
-sum=0
-while n>0:
-    k=n%10
-    print(k)
-    if k%3 ==0:
+def fun2(n):
+   sum=0
+   while n>0:
+     k=n%10
+     if k%3 ==0:
         sum+=k
-    n=n//10
-print(sum)
+     n=n//10
+   return sum
 
 #3 задача
 import math
@@ -33,4 +32,7 @@ for i in range(2, w):
         break
 print(i)
 
-
+n =int(input())
+print(fun1(n))
+print(fun2(n))
+print(fun3(n))
