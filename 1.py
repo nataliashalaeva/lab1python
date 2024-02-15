@@ -1,11 +1,15 @@
 #1 задача
-import math
-def fun1(n):
-   k=0
-   for i in range(1, n+1):
-      if math.gcd(n, i) == 1:
-       k+=1
-   return k
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def cou(n):
+    count = 0
+    for i in range(1, n+1):
+        if gcd(n, i) == 1:
+            count += 1
+    return count
 
 #2 задача
 def fun2(n):
@@ -18,7 +22,6 @@ def fun2(n):
    return sum
 
 #3 задача
-import math
 w = int(input())
 sum=0
 n=w
@@ -33,6 +36,6 @@ for i in range(2, w):
 print(i)
 
 n =int(input())
-print(fun1(n))
+print(cou(n))
 print(fun2(n))
 print(fun3(n))
