@@ -15,3 +15,9 @@ def cou(string):
     return count
 
 #17 Дана строка в которой записан путь к файлу. Необходимо найти имя файла без расширения.
+def file(path):
+    components = path.split('/')
+    filename_with_extension = components[-1]
+    filename_parts = filename_with_extension.split('.')
+    filename = filename_parts[0]
+    return filename
