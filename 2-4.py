@@ -21,3 +21,24 @@ def file(path):
     filename_parts = filename_with_extension.split('.')
     filename = filename_parts[0]
     return filename
+
+print("Выберите задачу для решения:")
+print("2: Проверить, упорядочены ли строчные символы этой строки по возрастанию")
+print("10: Подсчитать количество букв 'А' в строке")
+print("17: Найти имя файла без расширения")
+
+choice = input("Введите номер задачи: ")
+if choice == "2":
+    string = input()
+    if check(string):
+        print("Символы упорядочены")
+    else:
+        print("Символы не упорядочены")
+elif choice == "10":
+    string = input()
+    print("Количество букв 'А' в строке:", cou(string))
+elif choice == "17":
+    filename= input()
+    print("Имя файла без расширения:", file(filename))
+else:
+    print("Неверный выбор")
