@@ -1,4 +1,4 @@
-#1 задача
+#1 Найти количество чисел, взаимно простых с заданным.
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b
@@ -11,7 +11,7 @@ def cou(n):
             count += 1
     return count
 
-#2 задача
+#2 Найти сумму цифр числа, делящихся на 3
 def fun2(n):
    sum=0
    while n>0:
@@ -21,19 +21,19 @@ def fun2(n):
      n=n//10
    return sum
 
-#3 задача
-w = int(input())
-sum=0
-n=w
-while n>0:
+#3 Найти делитель числа, являющийся взаимно простым с суммой цифр данного числа
+def fun3(n):
+  sum=0
+  w=n
+  while n>0:
     k=n%10
     sum+=k
     n=n//10
-for i in range(2, w):
+  for i in range(2, w):
     if w%i==0:
-        math.gcd(sum, i) == 1
+        gcd(sum, i) == 1
         break
-print(i)
+  return i
 
 n =int(input())
 print(cou(n))
