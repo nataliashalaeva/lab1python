@@ -7,5 +7,11 @@ def check(string):
             return False
     return True
 #10 Дана строка. Необходимо подсчитать количество букв "А" в этой строке.
+def cou(string):
+    count = 0
+    for letter in string:
+        if letter == 'A':
+            count += 1
+    return count
 
 #17 Дана строка в которой записан путь к файлу. Необходимо найти имя файла без расширения.
