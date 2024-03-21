@@ -1,12 +1,15 @@
 #10 Дан список строк с клавиатуры. Упорядочить по количеству
 слов в строке.
-def f(string):
-    return len(string.split(" "))
 
-l = []
-s = input()
-l.append(s)
-while s != "": 
-    s = input()
-    if (s != ""): l.append(s)
-print(sorted(l, key=f))
+def count_words(string):
+    return len(string.split())
+
+strings = []
+print("Введите строки (для завершения введите пустую строку):")
+while True:
+    string = input()
+    if string == "":
+        break
+    strings.append(string)
+
+print(sorted(strings, key=count_words))
