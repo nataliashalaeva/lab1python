@@ -9,4 +9,4 @@ while True:
     strings.append(string)
 
 print("Отсортированный список строк по длине:")
-print(*sorted(strings, key=len), sep=" ")
+print(sorted(strings, key=len))
