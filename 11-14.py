@@ -24,3 +24,19 @@ def sort_by_vowel_consonant_combinations(strings):
     return sorted(strings, key=count_vowel_consonant_combinations)
 
 #11 В порядке квадратичного отклонения дисперсии максимального среднего веса ASCII-кода тройки символов в строке от максимального среднего веса ASCII-кода тройки символов в первой строке.
+# Функция для вычисления среднего веса ASCII-кода тройки символов в строке
+def avg_ascii_weight_triple(string):
+    triple_weights = [sum(ord(c) for c in string[i:i+3]) / 3 for i in range(len(string) - 2)]
+    return max(triple_weights) if triple_weights else 0
+    
+# Функция для вычисления квадратичного отклонения дисперсии максимального среднего веса ASCII-кода тройки символов в строке от максимального среднего веса ASCII-кода тройки символов в первой строке
+def quadratic_deviation(strings):
+    if len(strings) < 2:
+        return 0
+    first_string_avg = avg_ascii_weight_triple(strings[0])
+    max_avg = max(avg_ascii_weight_triple(string) for string in strings[1:])
+    return (max_avg - first_string_avg) ** 2
+    
+def quadratic_deviation_sort(strings):
+     return sorted(strings, key=quadratic_deviation)
+
