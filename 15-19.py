@@ -34,3 +34,12 @@ def func4(l, a, b):
     return k
   
 #50 Для двух введенных списков L1 и L2 построить новый список, состоящий из элементов, встречающихся только в одном из этих списков и не повторяющихся в них.
+def func5(l1, l2):
+    l = []
+    for i in l1:
+        if i not in l2 and l1.count(i) == 1: l.append(i)
+    for i in l2:
+        if i not in l1 and l2.count(i) == 1: l.append(i)
+    return l
+
+
