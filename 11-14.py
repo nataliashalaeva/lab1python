@@ -20,5 +20,7 @@ def count_vowel_consonant_combinations(string):
         elif string[i] in consonants and string[i+1] in vowels:
             consonant_vowel_count += 1
     return abs(vowel_consonant_count - consonant_vowel_count)
-#11 В порядке квадратичного отклонения дисперсии максимального среднего веса ASCII-кода тройки символов в строке от максимального среднего веса ASCII-кода тройки символов в первой строке.
+def sort_by_vowel_consonant_combinations(strings):
+    return sorted(strings, key=count_vowel_consonant_combinations)
 
+#11 В порядке квадратичного отклонения дисперсии максимального среднего веса ASCII-кода тройки символов в строке от максимального среднего веса ASCII-кода тройки символов в первой строке.
