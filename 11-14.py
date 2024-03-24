@@ -40,3 +40,31 @@ def quadratic_deviation(strings):
 def quadratic_deviation_sort(strings):
      return sorted(strings, key=quadratic_deviation)
 
+if __name__ == "__main__":
+    strings = []
+    print("Введите строки:")
+    while True:
+        string = input()
+        if string == "":
+            break
+        strings.append(string)
+
+    choice = input("Выберите задачу (1, 2, 3, 4): ")
+
+    if choice == "1":
+        sorted_strings = sort_by_avg_ascii(strings)
+    elif choice == "2":
+        sorted_strings = sort_by_quad_deviation(strings)
+    elif choice == "3":
+        sorted_strings = sort_by_vowel_consonant_combinations(strings)
+    elif choice =="4":
+        sorted_strings = quadratic_deviation_sort(strings)
+    else:
+        print("Некорректный выбор задачи.")
+        exit()
+
+    print("Отсортированный список строк:")
+    for string in sorted_strings:
+        print(string)
+
+
