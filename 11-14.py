@@ -5,8 +5,8 @@ def sort_by_avg_ascii(strings):
   
 #4 4 В порядке увеличения квадратичного отклонения среднего веса ASCII-кода символа строки от среднего веса ASCII-кода символа первой строки.
 def sort_by_quad_deviation(strings):
-    first_string_avg = sum(ord(c) for c in strings[0]) / len(strings[0])
-    return sorted(strings, key=lambda x: (sum((ord(c) - first_string_avg) ** 2 for c in x) / len(x)) ** 0.5)
+    first_string_avg = sum(ord(c) for c in strings[0]) / len(strings[0]) # среднее значение ASCII кодов символов в первой строке из списка
+    return sorted(strings, key=lambda x: (sum((ord(c) - first_string_avg) ** 2 for c in x) / len(x)) ** 0.5) # в каждой строки x, вычисляется квадратичное отклонение от среднего значения ASCII кодов первой строки first_string_avg. Затем строки сортируются в порядке возрастания этого отклонения.
     
 #7 В порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке.
 def count_vowel_consonant_combinations(string):
